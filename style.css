@@ -1,3 +1,19 @@
-.table{
-    color: blue;
+html{
+    background-color: #efd7e5;
+}
+
+#form{
+padding: 5px;
+font-size: 20px;
+font-family: 'Open Sans', sans-serif;
+margin: 0 auto;
+flex-wrap: wrap;
+justify-content: space-around;
+border-radius: 12px;
+align-items: center;
+}
+
+.img{
+    max-width: 50rem;
+    max-height: 50rem;
 }
