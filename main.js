@@ -83,6 +83,10 @@ const DOMSelectors ={
     
 }
 
+function clearFields() {
+    DOMSelectors.input.value=""
+}
+
 let randomCard;
 
 function randomize (array) {
@@ -102,11 +106,19 @@ function createCard() {
     return randomCard
 }
 
+function resetGame() {
+    clearFields();
+    animal = createCard();
+    DOMSelectors.container.innerHTML = ''; 
+}
+
+
 const animal = createCard()
 
 button.addEventListener("click", function(event){
     const userGuess = DOMSelectors.input.value.toLowerCase(); 
     const correctAnswer = animal.name.toLowerCase();
+    clearFields()
 
     if (userGuess === correctAnswer) {
         console.log("Win")
@@ -115,8 +127,9 @@ button.addEventListener("click", function(event){
     <h2> ${animal.name} </h2>
     <p> ${animal.funFact} </p>
     </div>`
-)}
-    else{
+    );
+    setTimeout(resetGame, 3000);
+} else {
         console.log("Try Again")
         DOMSelectors.container.insertAdjacentHTML("beforeend",
     `<div class="card" id="box">
@@ -124,5 +137,3 @@ button.addEventListener("click", function(event){
     </div>`
 )}
 });
-
-
