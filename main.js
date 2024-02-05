@@ -109,11 +109,10 @@ function createCard() {
 function resetGame() {
     clearFields();
     animal = createCard();
-    DOMSelectors.container.innerHTML = ''; 
 }
 
 
-const animal = createCard()
+let animal = createCard()
 
 button.addEventListener("click", function(event){
     const userGuess = DOMSelectors.input.value.toLowerCase(); 
