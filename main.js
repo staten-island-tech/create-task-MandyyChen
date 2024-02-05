@@ -83,7 +83,7 @@ const DOMSelectors ={
     
 }
 
-//these two work
+let randomCard;
 
 function randomize (array) {
     const randomInt = Math.floor(Math.random() * array.length);
@@ -92,33 +92,37 @@ function randomize (array) {
 
 function createCard() {
     const randomCard = randomize(animals)
+    console.log(randomCard)
+    DOMSelectors.container.innerHTML = ''
     DOMSelectors.container.insertAdjacentHTML("beforeend",
     `<div class="card" id="box">
     <img src="${randomCard.img}" class="card-img">
     </div>`
 ); 
+    return randomCard
 }
 
-
-function check() {
-    const userGuess = DOMSelectors.input.value.toLowerCase(); 
-    const correctAnswer = randomCard.name.toLowerCase();
-
-    if (userGuess === correctAnswer) {
-     DOMSelectors.container.insertAdjacentHTML("beforeend",
-     `<div class="card" id="box">
-    <img src="${randomCard.img}" class="card-img">
-    <p> "${randomCard.funFact}" </p>
-    <h3> "${randomCard.name}" </h3>
-    </div>`
-    )}
-
-}
+const animal = createCard()
 
 button.addEventListener("click", function(event){
-    console.log("poo")
+    const userGuess = DOMSelectors.input.value.toLowerCase(); 
+    const correctAnswer = animal.name.toLowerCase();
+
+    if (userGuess === correctAnswer) {
+        console.log("Win")
+        DOMSelectors.container.insertAdjacentHTML("beforeend",
+    `<div class="card" id="box">
+    <h2> ${animal.name} </h2>
+    <p> ${animal.funFact} </p>
+    </div>`
+)}
+    else{
+        console.log("Try Again")
+        DOMSelectors.container.insertAdjacentHTML("beforeend",
+    `<div class="card" id="box">
+    <h2> Not Quite, Try Again! </h2>
+    </div>`
+)}
 });
 
-createCard()
-const randomCard = randomize(animals)
-console.log(randomCard)
+
