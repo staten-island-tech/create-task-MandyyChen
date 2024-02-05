@@ -124,7 +124,7 @@ button.addEventListener("click", function(event){
         DOMSelectors.container.insertAdjacentHTML("beforeend",
     `<div class="card" id="box">
     <h2> ${animal.name} </h2>
-    <p> ${animal.funFact} </p>
+    <p> Fun Fact: ${animal.funFact} </p>
     </div>`
     );
     setTimeout(resetGame, 3000);

@@ -1,9 +1,9 @@
-html{
+html {
     display: flex;
     background-color: #d7ebef;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    margin: 0;
 }
 
 h1{
@@ -13,11 +13,14 @@ h1{
 
 h2{
     text-align: center;
-    font-size: 30px;
+    white-space: nowrap;
+    font-size: 40px;
 }
 
 p{
     text-align: center;
+    white-space: nowrap;
+    font-size: 30px;
 }
 
 .form-inputs{
@@ -26,14 +29,19 @@ p{
 
 #button{
     font-size: 25px;
+    margin: auto;
     border-radius: 4px;
     align-items: center;
 }
 
 form{
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     align-items: center;
-    margin-right: 5px;
+    width: 800px;
+    display: block;
 }
 
 
@@ -48,11 +56,11 @@ form{
 }
 
 .card{
-    max-width: 58%;
+    max-width: 60%;
     max-height: 50%;
     align-items: center;
-    display: block;
     padding: 20px;
+    display: block;
 }
 
 .card-img{
